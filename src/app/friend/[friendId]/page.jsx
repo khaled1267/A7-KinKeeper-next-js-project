@@ -177,7 +177,7 @@ const FriendDetails = ({ params }) => {
               </button>
               <button
                 onClick={() => handaletimeline("Video")}
-                className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:bg-emerald-50 hover:text-emerald-700 transition"
+                className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:bg-base-200 transition"
               >
                 <Image
                   src="/video.png"
