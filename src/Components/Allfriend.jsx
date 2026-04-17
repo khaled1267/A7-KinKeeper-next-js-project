@@ -4,7 +4,9 @@ import Link from "next/link";
 
 
 const getFriends = async () => {
-  const res = await fetch("http://localhost:3000/friends.json");
+  const res = await fetch("https://my-kinkeeper-project-nextjs.vercel.app/friends.json"
+   
+  );
   return res.json();
   
 };
@@ -19,7 +21,7 @@ export default async function FriendsPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {friends.map((friend) => (
-          /* এখানে পুরো ডিভ-কে লিঙ্কের ভেতরে ঢুকিয়ে দেওয়া হয়েছে */
+          
           <Link 
             key={friend.id} 
             href={`/friend/${friend.id}`}
@@ -27,7 +29,7 @@ export default async function FriendsPage() {
           >
             <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center border border-gray-100 hover:shadow-md cursor-pointer h-full">
               
-              {/* প্রোফাইল ইমেজ */}
+              
               <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-gray-200 relative">
                 <Image
                   src={friend.picture}
@@ -45,7 +47,7 @@ export default async function FriendsPage() {
                 {friend.days_since_contact}d ago
               </p>
 
-              {/* ট্যাগ লুপ */}
+              
               <div className="flex flex-wrap gap-1 justify-center mb-4">
                 {friend.tags.map((tag, index) => (
                   <span
@@ -57,7 +59,7 @@ export default async function FriendsPage() {
                 ))}
               </div>
 
-              {/* স্ট্যাটাস ব্যাজ */}
+              
               <span
                 className={`px-4 py-1 rounded-full text-white text-xs font-medium capitalize mt-auto ${
                   friend.status.toLowerCase() === "overdue"
@@ -70,7 +72,7 @@ export default async function FriendsPage() {
                 {friend.status}
               </span>
 
-              {/* View Details লেখাটি নিচে আলাদাভাবে দেখা যাবে */}
+              
               
             </div>
           </Link>

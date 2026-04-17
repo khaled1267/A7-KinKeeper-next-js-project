@@ -6,7 +6,7 @@ import React, { useContext } from "react";
 const Timelindetail = () => {
   const context = useContext(TimelineContext);
 
-  // Debugging: Jodi context e somossa thake eta error na diye console-e bolbe
+  
  console.log(context);
    
   

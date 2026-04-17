@@ -14,6 +14,7 @@ export default function Home() {
       <Bannercard></Bannercard>
       <Suspense fallback={<Loading/>}>
         <Allfriend />
+        
       </Suspense>
       <Footer></Footer>
     </div>

@@ -7,10 +7,13 @@ const Banner = () => {
       <h1 className="text-4xl font-bold">Friends to keep close in your life</h1>
       <p className="text-lg text-[#64748B] text-center ">
         Your personal shelf of meaningful connections. Browse, tend, and nurture
-        the <br  />
+        the <br />
         relationships that matter most.
       </p>
-      <button  className="btn bg-[#244D3F] text-white "> <IoMdAdd /> Get Started</button>
+      <button className="btn bg-[#244D3F] text-white ">
+        {" "}
+        <IoMdAdd /> Get Started
+      </button>
     </div>
   );
 };

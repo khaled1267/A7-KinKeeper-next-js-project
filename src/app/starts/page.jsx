@@ -7,7 +7,7 @@ import Footer from "@/Components/Footer";
 const Chartpage = () => {
   const { timeline } = useContext(TimelineContext);
 
-  // ১. টাইমলাইন ডাটাকে চার্ট ডাটাতে রূপান্তর
+  
   const activityCounts = timeline.reduce((acc, curr) => {
     const type = curr.activityType || "Other";
     acc[type] = (acc[type] || 0) + 1;
@@ -21,7 +21,7 @@ const Chartpage = () => {
 
   const COLORS = ["#10B981", "#3B82F6", "#F59E0B", "#EF4444"];
 
-  // ডাটা আছে কি নেই তা চেক করার জন্য variable
+ 
   const hasData = data.length > 0;
 
   return (
@@ -29,7 +29,7 @@ const Chartpage = () => {
       <h2 className="text-4xl font-bold mb-8">Friendship Analytics</h2>
 
       {!hasData ? (
-        // ডাটা না থাকলে এই মেসেজ দেখাবে
+        
         <div className="flex flex-col items-center justify-center h-64 bg-white w-full max-w-2xl rounded-2xl shadow-sm border border-dashed border-gray-300">
           <p className="text-lg text-gray-500 font-medium">
             No Chart data available yet.
@@ -39,7 +39,7 @@ const Chartpage = () => {
           </p>
         </div>
       ) : (
-        // ডাটা থাকলে চার্ট দেখাবে
+        
         <div className="w-full max-w-2xl">
           <div
             className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
@@ -73,7 +73,7 @@ const Chartpage = () => {
             </ResponsiveContainer>
           </div>
 
-          {/* Legend */}
+          
           <div className="flex flex-wrap justify-center gap-6 mt-6 bg-white p-4 rounded-xl shadow-sm">
             {data.map((entry, index) => (
               <div key={index} className="flex items-center gap-2">
