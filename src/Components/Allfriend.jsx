@@ -1,12 +1,16 @@
+  
 import Image from "next/image";
 import Link from "next/link";
+
 
 const getFriends = async () => {
   const res = await fetch("http://localhost:3000/friends.json");
   return res.json();
+  
 };
 
 export default async function FriendsPage() {
+  
   const friends = await getFriends();
 
   return (

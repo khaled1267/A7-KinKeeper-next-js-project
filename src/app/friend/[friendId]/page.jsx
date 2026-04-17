@@ -14,18 +14,13 @@ const FriendDetails = ({ params }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
+      
         const { friendId } = await params;
         const res = await fetch("http://localhost:3000/friends.json");
         const friends = await res.json();
         const foundFriend = friends.find((f) => f.id === parseInt(friendId));
         setFriend(foundFriend);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        // লোডিং ইফেক্ট বোঝার জন্য সামান্য ডিলে দেওয়া যেতে পারে (ঐচ্ছিক)
-        setTimeout(() => setLoading(false), 500);
-      }
+        setLoading(false);
     };
     fetchData();
   }, [params]);
